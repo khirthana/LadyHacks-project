@@ -17,6 +17,7 @@
         </activity>
     <activity android:name=".AddProductActivity"></activity>
         <activity android:name=".EditActivity"></activity>
+        <activity android:name=".CalendarActivity"></activity>
     </application>
 
 </manifest>

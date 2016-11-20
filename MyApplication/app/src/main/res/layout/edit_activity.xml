@@ -8,19 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ladyhacks_project.ladyhacks_project.MainActivity"
-    android:background="@drawable/image">
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text=""
-        android:ems="10"
-        android:layout_marginTop="64dp"
-        android:id="@+id/editText"
-        android:layout_below="@+id/spinner"
-        android:layout_alignParentEnd="true" />
+    tools:context="ladyhacks_project.ladyhacks_project.MainActivity">
 
 
     <Spinner
@@ -40,7 +28,8 @@
         android:id="@+id/button2"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="20dp" />
+        android:layout_marginStart="20dp"
+        android:onClick="delete_selected_button"/>
 
     <Button
         android:text="Done"
@@ -50,7 +39,16 @@
         android:layout_alignBaseline="@+id/button2"
         android:layout_alignBottom="@+id/button2"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="33dp" />
+        android:layout_marginEnd="33dp"
+        android:onClick="done_button"/>
+
+    <TextView
+        android:text="Edit List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/button2"
+        android:id="@+id/textView3"/>
 
 
 </RelativeLayout>

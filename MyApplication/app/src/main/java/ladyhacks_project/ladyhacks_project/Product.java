@@ -1,32 +1,29 @@
 package ladyhacks_project.ladyhacks_project;
 
 
-public class Product {
+import java.io.Serializable;
 
-    int product_barcode;
+public class Product implements Serializable{
+
     String product_name;
-    String product_exp;
+    int product_exp;
 
 
     public Product (){    }
 
-    public Product (String product_name, String product_exp){
-      //  this.product_barcode = product_id;
+    public Product (String product_name, int product_exp){
         this.product_name = product_name;
         this.product_exp = product_exp;
     }
 
-    //void setProduct_barcode(int id){this.product_barcode=id;}
 
     void setProduct_name(String name){this.product_name=name;}
 
-    void setProduct_exp(String exp){this.product_exp=exp;}
-
-    //public int getProduct_barcode(){return product_barcode;}
+    void setProduct_exp(int exp){this.product_exp=exp;}
 
     public String getProduct_name() {return product_name;}
 
-    public String getProduct_exp() {return product_exp;}
+    public int getProduct_exp() {return product_exp;}
 
 }
 
