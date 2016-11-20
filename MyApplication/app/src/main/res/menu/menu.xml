@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_addNewProduct"
+
+        android:title="Add New Product" />
+    <item
+        android:id="@+id/menu_editProduct"
+
+        android:title="Edit List" />
+    <item
+        android:id="@+id/menu_calender"
+
+        android:title="Calendar" />
+</menu>

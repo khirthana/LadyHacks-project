@@ -23,7 +23,7 @@ public class ProductDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "product";
     private static final String TABLE_PRODUCT_DETAIL = "productdetail";
 
-    private static final String KEY_id = "product_barcode";
+    private static final String KEY_id = "product_id";
     private static final String KEY_name = "product_name";
     private static final String KEY_exp = "product_exp";
 
@@ -33,9 +33,9 @@ public class ProductDBHelper extends SQLiteOpenHelper {
     }
     public void onCreate (SQLiteDatabase db){
         String CREATE_PRODUCT_TABLE = "CREATE TABLE " + TABLE_PRODUCT_DETAIL + "("
-                + KEY_id + " INTEGER PRIMARY KEY,"
+                + KEY_id + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + KEY_name + " TEXT,"
-                + KEY_exp+ " TEXT,";
+                + KEY_exp+ " TEXT" + ")";
 
         db.execSQL(CREATE_PRODUCT_TABLE);
     }
@@ -48,10 +48,9 @@ public class ProductDBHelper extends SQLiteOpenHelper {
 
 
     //function for inserting a new product into the database
-    public boolean addData (int id, String name, String exp){
+    public boolean addData (String name, String exp){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(KEY_id,id);
         contentValues.put(KEY_name,name);
         contentValues.put(KEY_exp,exp);
         long result = db.insert (TABLE_PRODUCT_DETAIL, null, contentValues);
@@ -84,7 +83,7 @@ public class ProductDBHelper extends SQLiteOpenHelper {
             String product_name= cursor.getString(1);
             String product_exp=cursor.getString(2);
 
-            results.add(new Product(product_id,product_name,product_exp));
+            results.add(new Product(product_name,product_exp));
 
             cursor.moveToNext();
         }
