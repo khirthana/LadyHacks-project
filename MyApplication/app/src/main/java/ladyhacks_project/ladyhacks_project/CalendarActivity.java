@@ -50,7 +50,7 @@ public class CalendarActivity extends AppCompatActivity {
             }
             else if(added_list.size()==1){
                 Product item1=added_list.get(0);
-                if(item1.getProduct_name()=="Milk"){
+                if(item1.getProduct_name().equals("Milk")){
                     expiry_date1=item1.getProduct_exp();
 
                     expiry_date2=0;
@@ -116,15 +116,40 @@ public class CalendarActivity extends AppCompatActivity {
         text="Date ";
 
 //**prints current date (you can change format to fit in window)
-        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Calendar c = Calendar.getInstance();
         String formattedDate = df.format(c.getTime());
-        text=text+formattedDate;
+        //text=text+formattedDate+"\n";
 
 
 //**print next 7 days
+        text=text+"NOV20 "+"NOV21 "+"NOV22 "+"NOV23 "+"NOV24 "+"NOV25 "+"NOV26"+"\n";
 
 //**print product name (use +"\n" for new line)
+        text=text+"Milk";
+        switch(expiry_date1){
+            case 1:
+                text=text+"__________|";
+                break;
+            case 2:
+                text=text+"__________|";
+                break;
+            case 3:
+                text=text+"__________|";
+                break;
+            case 4:
+                text=text+"__________|";
+                break;
+            case 5:
+                text=text+"__________|";
+                break;
+            case 6:
+                text=text+"__________|";
+                break;
+            case 7:
+                text=text+"____________________________________________________|";
+                break;
+        }
 
 //**print number of _ until the expiry date then | (next to product name & below expiry date)
 
