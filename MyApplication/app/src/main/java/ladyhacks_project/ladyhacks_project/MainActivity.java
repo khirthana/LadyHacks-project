@@ -19,18 +19,26 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<Product> product_list;
+    /* This Android app is designed to prevent food waste by keeping 
+    track of you groceries and when your food expires. It uses
+    lists to keep track of what items you have added to your 
+    fridge.
+    */
 
-    List<Product> added_list;
-    String text="";
+    List<Product> product_list; // all possible options (with expiry date) user can select to add to their list
+
+    List<Product> added_list;  // items added to user's fridge and their expiry date
+    String text=""; //created to repeatedly used after change of value
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    /* this module is made to send user notifications about their current grocery status. 
+    */
+        super.onCreate(savedInstanceState); //adding on to the parent class code
+        setContentView(R.layout.activity_main);// and using the main layout for this page
 
 
-            //adding product to array list
+            //samples size for the product list. Each product has a name and their expiry date defined
             Product p1 = new Product("Milk", 7);
             Product p2 = new Product("Bread", 3);
 
