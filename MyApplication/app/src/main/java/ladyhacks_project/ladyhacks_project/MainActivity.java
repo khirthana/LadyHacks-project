@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    /* This module is made to send user notifications about their current grocery status and 
+    /* This method is made to send user notifications about their current grocery status and 
     stores items to the list of available products and list of products you own. All arraylists shown are sample size.
     */
-        super.onCreate(savedInstanceState); //This module adds on to the parent class code
+        super.onCreate(savedInstanceState); //This method adds on to the parent class code
         setContentView(R.layout.activity_main);// and uses the activity layout for this page.
 
 

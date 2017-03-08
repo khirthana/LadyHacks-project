@@ -42,9 +42,9 @@ will show on the bottom of the page, so they know the item has been added.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        /*This module is used to create the add product page.
+        /*This method is used to create the add product page.
         */
-        super.onCreate(savedInstanceState);//This module adds on to the parent class code
+        super.onCreate(savedInstanceState);//This method adds on to the parent class code
         setContentView(R.layout.add_activity);// and uses the add activity layout for this page.
 
         Intent callingIntent = getIntent(); 
@@ -71,7 +71,7 @@ will show on the bottom of the page, so they know the item has been added.
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        /*This module is used to handle the item which has been selected.
+        /*This method is used to handle the item which has been selected.
         */
         Spinner spinner = (Spinner) parent;
         if(spinner.getId() == R.id.spinner) { //after a item is selected from the product drop down list,
@@ -147,7 +147,7 @@ will show on the bottom of the page, so they know the item has been added.
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        //module used to display the menu on the top right of the screen so the user can go to any page
+        //method used to display the menu on the top right of the screen so the user can go to any page
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);//The display of the pop-up menu is created with all the different page options
         return true;
