@@ -20,8 +20,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     /* This Android app is designed to prevent food waste by keeping 
-    track of you groceries and when your food expires. It uses
-    2 lists: one to store what items you have added to your 
+    track of you groceries and when your food expires. For this main calendar page, there
+    is a display for the current date and have a menu button on the top right 
+    hand corner.
+    The app uses 2 lists: one to store what items you have added to your 
     fridge and the other to store all the products you may choose from. 
     We will make the assumptions what the second list covers all the options
     the user would put in their fridge.
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     stores items to the list of available products and list of products you own. All arraylists shown are sample size.
     */
         super.onCreate(savedInstanceState); //This module adds on to the parent class code
-        setContentView(R.layout.activity_main);// and uses the main layout for this page.
+        setContentView(R.layout.activity_main);// and uses the activity layout for this page.
 
 
             //Each product has a name and their expiry date defined. 
@@ -122,26 +124,26 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         //Creating the Pop-up menu 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu); //The display of the pop-up menu is create with all the contents
-        return true; //and this method notifies the program using a boolean for ease of debugging.
+        inflater.inflate(R.menu.menu, menu); //The display of the pop-up menu is created with all the different page options
+        return true; 
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handling selected item on the pop-up menu
         switch (item.getItemId()) { // for the selected item
-        // case analysis on selected item, when a operation finishes, it notifies the program by returning true.
+        // case analysis on selected item, when a operation finishes, it notifies the program if something was chosen.
             case R.id.menu_addNewProduct: // user wants to add a new product that they purchased
-                Intent i = new Intent(MainActivity.this,AddProductActivity.class); //new page is created
-                i.putExtra("list", (Serializable) product_list); //with the product lists information passed on
-                startActivity(i); //and we enter the page to add new products.
+                Intent i = new Intent(MainActivity.this,AddProductActivity.class); 
+                i.putExtra("list", (Serializable) product_list); //With the product lists information passed on,
+                startActivity(i); //we enter the page to add new products.
                 return true;
             case R.id.menu_editProduct:// user wants to edit a product
-                Intent i2 = new Intent(MainActivity.this,EditActivity.class);//so a new page is created
-                i2.putExtra("list", (Serializable) product_list);//with the product lists information passed on
-                startActivity(i2);//and we enter the page to edit the products in our fridge
+                Intent i2 = new Intent(MainActivity.this,EditActivity.class);
+                i2.putExtra("list", (Serializable) product_list);//With the product lists information passed on,
+                startActivity(i2);//we enter the page to edit the products in our fridge
                 return true;
             case R.id.menu_calender:// user wants to see the calendar of product 
-                Intent i3 = new Intent(MainActivity.this,MainActivity.class); //so a new calendar page is created
-                startActivity(i3); //and we enter that page
+                Intent i3 = new Intent(MainActivity.this,MainActivity.class); 
+                startActivity(i3); //remain on the same page
                 return true;
             default:
                 return super.onOptionsItemSelected(item); //notifies program that a menu selection was not made
